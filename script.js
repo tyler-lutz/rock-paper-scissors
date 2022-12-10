@@ -1,3 +1,7 @@
+let playerScore = 0;
+let computerScore = 0;
+let roundWinner = '';
+
 function getComputerChoice() {
     let random = Math.floor(Math.random() * 3);
     switch (random) {
@@ -8,21 +12,29 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
-
     if (playerSelection === computerSelection) {
-        return `Tie! You both chose ${playerSelection}`;
+        roundWinner = 'tie';
     } else if (
         (playerSelection === 'rock' && computerSelection === 'scissors') ||
         (playerSelection === 'paper' && computerSelection === 'rock') ||
         (playerSelection === 'scissors' && computerSelection === 'paper')
     ) {
-        return `You Win! ${playerSelection} beats ${computerSelection}`;
+        roundWinner = 'player';
+        playerScore++;
     } else {
-        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+        roundWinner = 'computer';
+        computerScore++;
     }
 }
 
-const playerSelection = 'rock';
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt('Rock, Paper, Scissors').toLowerCase();
+        let computerSelection = getComputerChoice();
+
+        playRound(playerSelection, computerSelection);
+        console.log(roundWinner);
+    }
+}
+
+game();
