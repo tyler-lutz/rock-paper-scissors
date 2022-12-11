@@ -27,14 +27,3 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt('Rock, Paper, Scissors').toLowerCase();
-        let computerSelection = getComputerChoice();
-
-        playRound(playerSelection, computerSelection);
-        console.log(roundWinner);
-    }
-}
-
-game();
