@@ -14,6 +14,16 @@ button {
     text-align: center;
 }
 
+.results {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.round {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
 .choices {
     display: flex;
     align-items: center;
@@ -26,4 +36,12 @@ button {
     height: 150px;
     width: 150px;
     font-size: 80px;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin-top: 32px;
+    gap: 100px;
 }
